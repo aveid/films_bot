@@ -63,5 +63,7 @@ def handler_call_data(call):
     bot.send_photo(call.message.chat.id, photo1)
     bot.send_message(call.message.chat.id, text, reply_markup=markup)
 
+print("very good")
+
 
 bot.polling()
