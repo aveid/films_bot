@@ -27,7 +27,8 @@ films = [
             {
                 "title": "Крик",
                 "rating": 5,
-                "link": "https://www.film.ru/movies/krik-6-0"
+                "link": "https://www.film.ru/movies/krik-6-0",
+                "image": "images/The_Scream.jpeg"
             }
         ]
     }

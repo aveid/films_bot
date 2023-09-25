@@ -52,13 +52,16 @@ def get_films(message):
 @bot.callback_query_handler(lambda call: True)
 def handler_call_data(call):
     markup = InlineKeyboardMarkup(row_width=2)
-
+    photo1 = open("images/avatars-000437845644-c65edy-t500x500.jpeg", 'rb')
     for i in films:
         for j in i.get("films"):
             if j.get("title") == call.data:
                 button = InlineKeyboardButton(text=j.get('title'), url=j.get('link'))
                 markup.add(button)
                 text = f"Фильм: {j.get('title')}\nРейтинг: {j.get('rating')}\nПриятного просмотра!"
+                photo1 = open(j.get('image'), "rb")
+    bot.send_photo(call.message.chat.id, photo1)
     bot.send_message(call.message.chat.id, text, reply_markup=markup)
+
 
 bot.polling()
